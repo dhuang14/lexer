@@ -1,10 +1,13 @@
-void parseString(string file)
+void parseString(ifstream file)
 {
-	stringstream iss(file);
-	while (iss)
+	string line;
+	while (getline(file, line))
 	{
-		string subs;
-		iss >> subs;
-		cout << subs << "\n";
+		stringstream iss(line);
+		while (iss)
+		{
+			string subs;
+			iss >> subs;
+		}
 	}
 }

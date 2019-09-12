@@ -1,0 +1,10 @@
+void parseString(string file)
+{
+	stringstream iss(file);
+	while (iss)
+	{
+		string subs;
+		iss >> subs;
+		cout << subs << "\n";
+	}
+}

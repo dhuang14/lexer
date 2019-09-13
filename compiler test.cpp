@@ -57,6 +57,10 @@ void fsm(string word)
 
 	while (ch != NULL)
 	{
+		
+		if(count == word.size())
+			return;
+		
 		ch = word.at(count);
 		// Operators or Separators //
 

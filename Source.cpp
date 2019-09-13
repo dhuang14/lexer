@@ -11,7 +11,7 @@ int Keyword(char alp[]);
 
 string readInFile(string fileName);
 
-int main(int argc, const char argv[])
+int main(int argc, const char *argv[])
 {
 	fsm(readInFile("Text.txt"));
 
@@ -20,7 +20,7 @@ int main(int argc, const char argv[])
 
 void fsm(string word)
 {
-	word += " ";
+	//word += " ";
 	// Define variables and identifiers //
 	int count = 0;
 	char ch = word.at(0);
@@ -101,7 +101,6 @@ void fsm(string word)
 		count++;
 	}
 }
-
 int Keyword(char alp[])
 {
 	char keywords[33][10] = { "auto","break","case","char","const","continue","default",

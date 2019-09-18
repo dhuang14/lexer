@@ -1,5 +1,5 @@
 //takes in a line and removes the comment block
-string parseFile(string line)
+string Extract(string line)
 {
 	string result;				    //holds the new string without comment block
 	regex matcher("!.+!");		//regex to match "!any comment!" in the string

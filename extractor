@@ -1,0 +1,11 @@
+//takes in a line and removes the comment block
+string parseFile(string line)
+{
+	string result;				    //holds the new string without comment block
+	regex matcher("!.+!");		//regex to match "!any comment!" in the string
+	
+	//extracts the non commented section and places it into result
+	regex_replace(back_inserter(result), line.begin(), line.end(), matcher, "$2");
+	
+	return result;
+} 

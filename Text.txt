@@ -1,0 +1,9 @@
+while (fahr < upper) a = 23.00 whileend
+
+hello world if break [12.3364] 45 846 test test for 3.14 hello.
+
+! This is 1 comment that should be #ignored; break...!
+
+456. 75.12 (45)  65 19. 16.428 [()]. F, 726.164.!
+
+! Putting a comment number 2 at the end of the file to see effect. Also, this one has a exclamation mark before it!

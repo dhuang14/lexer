@@ -141,7 +141,11 @@ string readInFile()
 void writeFile(string token, string lexeme)
 {
 	ofstream outFile;
-	cout << token << "   |  " << lexeme << "\n";										/* Console output of each token and lexeme ------------*/	outFile.open(outfileName, ios::app);												/* Open output text file and append to existing data --*/	outFile << token << "   |  " << lexeme << "\n";										/* Append the proper data to the output text file -----*/	outFile.close();																	/* Save and close output text file --------------------*/
+
+	cout << token << "   |  " << lexeme << "\n";										/* Console output of each token and lexeme ------------*/
+	outFile.open(outfileName, ios::app);												/* Open output text file and append to existing data --*/
+	outFile << token << "   |  " << lexeme << "\n";										/* Append the proper data to the output text file -----*/
+	outFile.close();																	/* Save and close output text file --------------------*/
 }
 
 
@@ -175,7 +179,10 @@ int main(int argc, const char* argv[])
 
 		cout << "Enter the filename (include .txt) you would like to save to: ";		/* Prompts the user to input the output text file name */
 		cin >> outfileName;																/* Stores the user defined file name to outfileName ---*/
-				outFile.open(outfileName, ios::app);											/* Open output text file and append to existing data --*/		outFile << "Token        |  Lexeme\n_____________|________\n             |\n";	/* Stores header to the output file -------------------*/		outFile.close();
+		
+		outFile.open(outfileName, ios::app);											/* Open output text file and append to existing data --*/
+		outFile << "Token        |  Lexeme\n_____________|________\n             |\n";	/* Stores header to the output file -------------------*/
+		outFile.close();
 	}
 	else {}
 
@@ -247,8 +254,7 @@ void lexer(string result)
 			else
 			{
 				iden[i] = '\0';
-				i = 0;
-				OpOrSep(ch);															/* Send ch to Operator or Separator function -------------------------*/
+				i = 0;															/* Send ch to Operator or Separator function -------------------------*/
 				state = 'A';															/* Return state to A to begin at q0 ----------------------------------*/
 
 				if (Keyword(iden) == 1)													/* Send string alp to FSM function and if accepted, output as Keyword */
@@ -261,6 +267,7 @@ void lexer(string result)
 					lexeme = iden;
 					writeFile("Identifier", lexeme);
 				}
+				OpOrSep(ch);
 			}
 		}
 		else if (state == 'C')
